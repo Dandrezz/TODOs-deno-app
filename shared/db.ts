@@ -1,7 +1,7 @@
 import * as uuid from "https://deno.land/std@0.207.0/uuid/mod.ts";
 import { TodosProps } from "../interfaces/ITodos.ts";
 
-const db = await Deno.openKv("todos");
+const db = await Deno.openKv("https://api.deno.com/databases/17be224e-29ec-4dee-b00d-cdf2791902a9/connect");
 
 export async function loadTodos() {
     const out: TodosProps[] = [];
