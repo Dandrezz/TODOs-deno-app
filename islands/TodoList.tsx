@@ -53,6 +53,12 @@ const TodoList = () => {
   };
 
   const handleRemoveClick = (id: string) => {
+    const todo = todos.find((todo) => todo.id === id);
+    fetch(URL_API_TODOS, {
+        method: "DELETE",
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+        body: JSON.stringify(todo),
+      });
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
