@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     name: Deploy
-    runs-on: Ubuntu-server-test
+    runs-on: [self-hosted, linux, x64, Ubuntu-server-test]
 
     permissions:
       id-token: write # Needed for auth with Deno Deploy
