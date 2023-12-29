@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     name: Deploy
-    runs-on: denoland/deno
+    runs-on: ubuntu-latest
 
     permissions:
       id-token: write # Needed for auth with Deno Deploy
@@ -29,6 +29,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "dapper-weasel-29"
+          project: "funny-otter-55"
           entrypoint: "main.ts" # 📝 Update the entrypoint if necessary
           root: "." # 📝 Update the root if necessary
