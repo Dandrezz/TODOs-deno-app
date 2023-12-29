@@ -1,10 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import { TodosProps } from "../interfaces/ITodos.ts";
-import { load } from "$std/dotenv/mod.ts";
 
-const { URL_API } = await load();
-
-const URL_API_TODOS = `${URL_API}/api/todos-api`;
+const URL_API_TODOS = "/api/todos-api";
 
 const TodoList = () => {
   const [todos, setTodos] = useState<TodosProps[]>([]);
