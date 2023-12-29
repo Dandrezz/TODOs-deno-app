@@ -18,6 +18,6 @@ export const handler: Handlers = {
   async DELETE(request){
     const todo = await request.json();
     await deleteTodo(todo);
-    return new Response(JSON.stringify({}));
+    return new Response();
   }
 };
