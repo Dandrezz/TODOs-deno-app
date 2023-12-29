@@ -29,5 +29,5 @@ export async function updateTodo(todo: TodosProps): Promise<TodosProps> {
 }
 
 export async function deleteTodo(todo: TodosProps): Promise<void> {
-  await db.delete("todos", todo.id);
+  await db.delete(["todos", todo.id]);
 }
