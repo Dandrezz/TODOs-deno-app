@@ -1,16 +1,14 @@
-import { useSignal } from "@preact/signals";
 import TodoList from "../islands/TodoList.tsx";
+import { Footer } from '../components/Footer.tsx'
 
 export default function Home() {
-  const count = useSignal(3);
   return (
-    <main className="text-white font-extrabold">
-      <h1 className="sm:text-3xl text-slate-900 tracking-tight dark:text-slate-200 text-5xl text-center my-7">
+    <main class="text-white font-extrabold w-full">
+      <h1 class="sm:text-3xl text-slate-900 tracking-tight dark:text-slate-200 text-5xl text-center my-7">
         Todo List
       </h1>
-      <div className="mx-auto w-10/12">
-        <TodoList />
-      </div>
+      <TodoList className="mx-auto w-10/12 mb-24 [min-height:74vh]"/>
+      <Footer/>
     </main>
   );
 }

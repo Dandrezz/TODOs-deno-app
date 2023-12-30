@@ -1,9 +1,16 @@
 import { useEffect, useState } from "preact/hooks";
 import { TodosProps } from "../interfaces/ITodos.ts";
+import { Fragment } from "preact/jsx-runtime";
 
 const URL_API_TODOS = "/api/todos-api";
 
-const TodoList = () => {
+interface Props {
+  className: string;
+}
+
+const TodoList = (props:Props) => {
+  const { className } = props;
+  
   const [todos, setTodos] = useState<TodosProps[]>([]);
 
   const fetchTodos = async () => {
@@ -75,7 +82,7 @@ const TodoList = () => {
   };
 
   return (
-    <>
+    <div class={className}>
       <div className="flex justify-between items-center">
         <h1 className="text-2xl">Table</h1>
         <button
@@ -162,7 +169,7 @@ const TodoList = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
